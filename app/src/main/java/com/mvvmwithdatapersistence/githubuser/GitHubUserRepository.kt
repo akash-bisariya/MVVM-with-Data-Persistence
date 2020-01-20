@@ -5,6 +5,6 @@ import com.mvvmwithdatapersistence.githubuser.GitHubUser
 
 interface GitHubUserRepository {
 
-    fun getGithubUser(userName:String):LiveData<GitHubUser>?
+    fun getGithubUser(userName: String): LiveData<GitHubUser>?
 
 }
