@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVMWithDataPersistence</string>
+    <string name="txt_submit">Submit</string>
+</resources>
