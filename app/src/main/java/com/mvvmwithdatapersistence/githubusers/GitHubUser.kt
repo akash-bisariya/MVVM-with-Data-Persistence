@@ -1,4 +1,4 @@
-package com.mvvmwithdatapersistence.githubuser
+package com.mvvmwithdatapersistence.githubusers
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

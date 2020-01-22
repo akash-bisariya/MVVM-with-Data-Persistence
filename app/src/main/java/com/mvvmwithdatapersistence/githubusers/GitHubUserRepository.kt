@@ -1,7 +1,6 @@
-package com.mvvmwithdatapersistence.githubuser
+package com.mvvmwithdatapersistence.githubusers
 
 import androidx.lifecycle.LiveData
-import com.mvvmwithdatapersistence.githubuser.GitHubUser
 
 interface GitHubUserRepository {
 
