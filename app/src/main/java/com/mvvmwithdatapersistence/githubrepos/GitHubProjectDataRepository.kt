@@ -28,11 +28,6 @@ class GitHubProjectDataRepository : GitHubProjectRepository {
             override fun onResponse(call: Call<List<GitHubProject>>, response: Response<List<GitHubProject>>) {
                 Log.d("RetroFit Response", "The Reponse from server : " + response.body())
                 data.value = response.body()
-
-                when(response.code()){
-
-                }
-
             }
 
             override fun onFailure(call: Call<List<GitHubProject>>, t: Throwable) {

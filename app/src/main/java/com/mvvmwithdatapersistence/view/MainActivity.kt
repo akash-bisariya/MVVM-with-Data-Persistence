@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.mvvmwithdatapersistence.R
 import com.mvvmwithdatapersistence.base.BaseViewModelFactory
+import com.mvvmwithdatapersistence.base.getViewModel
 import com.mvvmwithdatapersistence.githubrepos.GitHubProject
 import com.mvvmwithdatapersistence.githubrepos.GitHubProjectViewModel
 import com.mvvmwithdatapersistence.githubusers.GitHubUser
@@ -20,27 +21,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         btn_submit_github_user.setOnClickListener(this)
-//
-//        val viewModel = ViewModelProviders.of(this).get(GitHubUserViewModel::class.java)
-//
-
-
-        val firstFunction = { println("First Function")}
-
-        val secondFunction: (Int, Int) -> Int = { x:Int, y:Int->x*y}
-
-        fun firstHigherOrderFunction(anyFunction: (Int,Int)-> Int){
-            anyFunction(3,4)
-        }
-
-        firstHigherOrderFunction(secondFunction)
-
-
-
-
-//        observeViewModel(viewModel)
     }
 
     private fun observeUserViewModel(viewModel: GitHubUserViewModel) {
@@ -73,12 +54,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) when(v.id){
             (R.id.btn_submit_github_user)->{
-                val userViewModel = ViewModelProviders.of(this, BaseViewModelFactory{GitHubUserViewModel(et_github_user.text.toString(),application)})
-                    .get(GitHubUserViewModel::class.java)
-                val projectViewModel = ViewModelProviders.of(this,BaseViewModelFactory{GitHubProjectViewModel(et_github_user.text.toString(),application)})
-                    .get(GitHubProjectViewModel::class.java)
-                observeUserViewModel(userViewModel)
-                observeProjectViewModel(projectViewModel)
+
+                observeUserViewModel(getViewModel{GitHubUserViewModel(et_github_user.text.toString(),application)})
+
+                observeProjectViewModel(getViewModel{GitHubProjectViewModel(et_github_user.text.toString(),application)})
+
             }
 
         }

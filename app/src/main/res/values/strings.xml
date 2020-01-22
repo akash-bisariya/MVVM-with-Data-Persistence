@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MVVMWithDataPersistence</string>
     <string name="txt_submit">Submit</string>
+    <string name="txt_github_user_details">GitHub User Details</string>
+    <string name="txt_github_project_details">GitHub Project Details</string>
+    <string name="txt_enter_github_user_name">Enter Github User-name</string>
 </resources>

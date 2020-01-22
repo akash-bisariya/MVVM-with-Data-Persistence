@@ -29,13 +29,13 @@ class GitHubUserDataRepository : GitHubUserRepository {
         gitHubUserService.getUser(userName).enqueue(object : Callback<GitHubUser>{
             override fun onFailure(call: Call<GitHubUser>, t: Throwable) {
 
-                Log.d("Response from server ",""+t.message)
+                Log.d("Response from server ","Response from server : "+t.message)
                 data!!.value = null
 
             }
 
             override fun onResponse(call: Call<GitHubUser>, response: Response<GitHubUser>) {
-                Log.d("Response from server ",""+response.body())
+                Log.d("Response from server ","Response from server : "+response.body())
                 data!!.value = response.body()
             }
 
